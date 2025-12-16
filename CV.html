@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Abdur Rahman</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0D47A1;
+            --secondary: #1976D2;
+            --text: #333;
+            --gray: #666;
+            --light: #f4f7fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact; 
+        }
+
+        body {
+            background: #555;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .cv-container {
+            background: white;
+            width: 210mm; /* A4 Width */
+            min-height: 297mm; /* A4 Height */
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: grid;
+            grid-template-columns: 35% 65%;
+        }
+
+        /* --- LEFT SIDEBAR --- */
+        .sidebar {
+            background: var(--primary);
+            color: white;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .profile-img-placeholder {
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid white;
+            font-size: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item i { width: 20px; text-align: center; }
+        .contact-item a { color: white; text-decoration: none; }
+
+        .skills-section h3, .contact-section h3 {
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        .skill-tag {
+            background: rgba(255,255,255,0.15);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+
+        /* --- RIGHT CONTENT --- */
+        .main-content {
+            padding: 40px;
+            color: var(--text);
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .company {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .date {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* --- PRINT BUTTON --- */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        .print-btn:hover { background: var(--secondary); transform: translateY(-3px); }
+
+        /* --- PRINT MEDIA QUERY --- */
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-container { width: 100%; box-shadow: none; min-height: 100vh; }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-img-placeholder">
+                <span>AR</span>
+            </div>
+
+            <div class="contact-section">
+                <h3>Contact</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 92395 29167</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:Mallikabdurrahman37@gmail.com">Mallikabdurrahman37<br>@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://photo-video-editing.qwikbuild.com/">LuminaryFrame Studios</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-youtube"></i>
+                        <span>Ayat Serenity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3>Core Skills</h3>
+                <div class="skill-tag">Video Editing</div>
+                <div class="skill-tag">Web Development</div>
+                <div class="skill-tag">3D Design</div>
+                <div class="skill-tag">Music Editing</div>
+                <div class="skill-tag">logo designer</div>
+  <div class="skill-tag">Graphics designer</div>
+                <div class="skill-tag">Motion Graphics</div>
+                <div class="skill-tag">Creative Strategy</div>
+                <div class="skill-tag">Programming</div>
+            </div>
+
+            <div class="skills-section">
+                <h3>Software</h3>
+                <div class="skill-tag">Adobe Premiere Pro</div>
+                <div class="skill-tag">Blender / 3D Tools</div>
+                <div class="skill-tag">HTML5 / CSS3 / JS</div>
+                <div class="skill-tag">DAWs (Audio)</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 class="name">Abdur Rahman</h1>
+                <div class="title">Founder, Versa | Creative Technologist</div>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title">Professional Profile</h2>
+                <p class="description">
+                    I am the creator of <strong>Versa</strong>, a multidisciplinary creative-tech studio. I specialize in merging creativity with technology, delivering high-quality video editing, cinematic music edits, immersive 3D designs, and premium web development. Driven by discipline and purpose derived from my Islamic scholarship studies, I help clients build powerful digital experiences from visuals to code.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-title">Founder & Lead Creative</div>
+                    <div class="company">Versa / LuminaryFrame Studios</div>
+                    <div class="date">2020 - Present</div>
+                    <p class="description">
+                        Leading a creative tech studio focused on digital storytelling.
+                        <br>• Produced 100+ high-quality video projects with cinematic grading.
+                        <br>• Developed modern, responsive websites for various clients.
+                        <br>• Designed immersive 3D visuals and brand identities.
+                        <br>• Managed end-to-end creative strategy for digital brands.
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-title">Freelance Video Editor & Developer</div>
+                    <div class="company">Independent</div>
+                    <div class="date">2019 - 2020</div>
+                    <p class="description">
+                        Started professional journey by offering specialized editing and coding services to local and online clients, building a strong portfolio of creative work.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="job-title">Islamic Scholarship (Alim Course)</div>
+                    <div class="company">Current Pursuit</div>
+                    <p class="description">
+                        Studying classical Islamic sciences. This pursuit instills deep discipline, clarity of thought, and a strong sense of purpose which I apply to my professional work ethic and creative direction.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Languages</h2>
+                <p class="description">English • Urdu • Arabic (Basic/Study)</p>
+            </section>
+        </main>
+    </div>
+
+    <button onclick="window.print()" class="print-btn"><i class="fas fa-file-download"></i> Download as PDF</button>
+
+</body>
+</html>
+
